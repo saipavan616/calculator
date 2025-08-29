@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stunning Calculator</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #2b5876, #4e4376);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    main {
+      height: auto;
+      width: 350px;
+      padding: 20px;
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .section {
+      width: 100%;
+    }
+
+    .screen {
+      margin-bottom: 20px;
+        display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .screen input {
+      height: 70px;
+      width: 100%;
+      border: none;
+      border-radius: 12px;
+      padding: 10px;
+      font-size: 28px;
+      font-weight: bold;
+      text-align: right;
+    
+
+      background: rgba(255, 255, 255, 0.8);
+      color: #2b2b2b;
+      box-shadow: inset 2px 2px 6px rgba(0,0,0,0.2),
+                  inset -2px -2px 6px rgba(255,255,255,0.6);
+    }
+
+    .key1, .key2, .key3, .key4 {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+    }
+
+    input[type="button"] {
+      height: 60px;
+      width: 60px;
+      border: none;
+      border-radius: 15px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+      cursor: pointer;
+      background: linear-gradient(145deg, #6a11cb, #2575fc);
+      box-shadow: 4px 4px 10px rgba(0,0,0,0.4),
+                  -2px -2px 6px rgba(255,255,255,0.1);
+      transition: all 0.2s ease-in-out;
+    }
+
+    input[type="button"]:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.6);
+    }
+
+    input[type="button"]:active {
+      transform: scale(0.95);
+    }
+
+    .red {
+      background: linear-gradient(145deg, #ff416c, #ff4b2b);
+    }
+
+    .equal {
+      background: linear-gradient(145deg, #00c6ff, #0072ff);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <form>
+      <section class="section">
+        <div class="screen">
+          <input class="inp" type="text" name="result" readonly>
+        </div>
+
+        <div class="key1">
+          <input onclick="result.value +='1'" type="button" value="1">
+          <input onclick="result.value +='2'" type="button" value="2">
+          <input onclick="result.value +='3'" type="button" value="3">
+          <input onclick="result.value +='+'" type="button" value="+">
+        </div>
+
+        <div class="key2">
+          <input onclick="result.value+='4'" type="button" value="4">
+          <input onclick="result.value+='5'" type="button" value="5">
+          <input onclick="result.value+='6'" type="button" value="6">
+          <input onclick="result.value+='-'" type="button" value="-">
+        </div>
+
+        <div class="key3">
+          <input onclick="result.value+='7'" type="button" value="7">
+          <input onclick="result.value+='8'" type="button" value="8">
+          <input onclick="result.value+='9'" type="button" value="9">
+          <input onclick="result.value+='*'" type="button" value="×">
+        </div>
+
+        <div class="key4">
+          <input onclick="result.value+='0'" type="button" value="0">
+          <input class="red" onclick="result.value=''" type="button" value="C">
+          <input class="equal" onclick="result.value=eval(result.value)" type="button" value="=">
+          <input onclick="result.value+='/'" type="button" value="÷">
+          <input onclick="result.value+='.'" type="button" value=".">
+        </div>
+      </section>
+    </form>
+  </main>
+</body>
+</html>
